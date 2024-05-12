@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "b6ab5340-60a6-4767-80ae-10ed3a31d574",
+		"name": "Laravel-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31094567"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Registro de empleado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"MARCOS\",\r\n    \"paternal_name\": \"SIMPSONS\",\r\n    \"maternal_name\": \"PENA\",\r\n    \"other_names\": \"FRANCISCO\",\r\n    \"area\": \"Administración\",\r\n    \"employment_country\": \"United States\",\r\n    \"id_type\": \"Cédula de Ciudadanía\",\r\n    \"id_number\": \"AB5234653\"\r\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}employee-registration",
+							"host": [
+								"{{localhost}}employee-registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivar empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}employee-deactivate/1",
+							"host": [
+								"{{localhost}}employee-deactivate"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edición de empleado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"DFD\",\r\n    \"paternal_name\": \"AAAAAAAAAA\",\r\n    \"maternal_name\": \"PENAAAAAAAA\",\r\n    \"other_names\": \"FRAAAAAANCISCO\",\r\n    \"area\": \"Administración\",\r\n    \"employment_country\": \"United States\"\r\n    // \"id_type\": \"Cédula de Ciudadanía\"\r\n    // \"id_number\": \"AB5234003\"\r\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}employee-edit/1",
+							"host": [
+								"{{localhost}}employee-edit"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}employee-list?per_page=1&status=Inactive",
+							"host": [
+								"{{localhost}}employee-list"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "O",
+									"disabled": true
+								},
+								{
+									"key": "employment_country",
+									"value": "United%20States",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Inactive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ok",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}ok",
+							"host": [
+								"{{localhost}}ok"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:8000/api/",
+			"type": "string"
+		}
+	]
+}
